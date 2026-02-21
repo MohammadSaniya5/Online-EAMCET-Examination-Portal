@@ -1,6 +1,6 @@
 #  Online EAMCET Examination Portal (Demo Version)
 
-🔗 Live Demo: [Link] (https://online-eamcet-portal.rf.gd/)
+🔗 Live Demo: [Link](https://online-eamcet-portal.rf.gd/)
 
 ##  About the Project
 
