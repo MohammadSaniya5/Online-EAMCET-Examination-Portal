@@ -1,0 +1,148 @@
+ 
+@media (max-width: 1024px) {
+
+  nav {
+    gap: 25px;
+  }
+
+  nav a {
+    font-size: 1.15rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 120px;
+  }
+
+  main p {
+    font-size: 1.3rem;
+    margin-bottom: 100px;
+  }
+
+  .container {
+    height: 80vh;
+  }
+}
+ 
+@media (max-width: 768px) {
+
+  body, html {
+    background-attachment: scroll;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .left-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 15px 0;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  nav a {
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+
+  main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 80px;
+  }
+
+  main p {
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+  }
+
+  .scroll-down-indicator {
+    font-size: 2.8rem;
+    margin: 40px auto;
+  }
+
+  .container {
+    height: 65vh;
+    border-radius: 0;
+  }
+
+  .buttons button {
+    font-size: 1.8rem;
+    width: 38px;
+    height: 38px;
+  }
+
+
+  nav#navMenu {
+    display: none !important;   
+    flex-direction: column !important;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+
+  nav#navMenu.active {
+    display: flex !important; 
+  }
+
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    z-index: 9999;
+  }
+}
+ 
+@media (max-width: 480px) {
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 60px;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  .container {
+    height: 55vh;
+  }
+}
