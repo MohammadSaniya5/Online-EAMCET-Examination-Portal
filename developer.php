@@ -18,7 +18,7 @@ if (isset($_POST['logout'])) {
 $login_error = '';
 if (!isset($_SESSION['admin_logged_in'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $stored_hash = password_hash('vignan', PASSWORD_DEFAULT);
+        $stored_hash = password_hash('secret_password', PASSWORD_DEFAULT);
         if (password_verify($_POST['password'], $stored_hash)) {
             $_SESSION['admin_logged_in'] = true;
             header("Location: developer.php");
