@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-      width: 95%;
+      width: 100%;
       padding: 10px;
       border: 2px solid rgb(6, 104, 169);
       border-radius: 8px;
@@ -304,24 +304,385 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     }
 
-    @media (max-width: 768px) {
-      header {
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .close-btn {
+      display: none;
+    }
+
+    .menu-toggle.hide {
+      display: none !important;
+    }
+
+    header {
+      z-index: 2000;
+      position: relative;
+    }
+
+    nav {
+      z-index: 3000;
+    }
+
+    .menu-toggle {
+      z-index: 4000;
+      position: relative;
+    }
+
+    .popup-overlay {
+      z-index: 5000;
+    }
+
+    @media (max-width: 992px) {
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden !important;
+        font-family: 'Inter', sans-serif;
+
+        background: url('vgnt.jpg') no-repeat center center;
+        background-size: cover;
+        background-attachment: scroll;
+
+        color: white;
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+
+      header {
+        padding: 10px 20px;
+        height: auto;
+      }
+
+      .vertical-line {
+        display: none;
+      }
+
+      .logo-wrapper img {
+        max-height: 75px;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 3100;
+        position: relative;
       }
 
       nav {
-        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 260px;
+        height: 100vh;
+        background: rgba(20, 10, 10, 0.95);
+        backdrop-filter: blur(18px);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+        padding-top: 20px;
+        gap: 25px;
+        transition: right 0.35s ease;
+        z-index: 3000;
       }
 
-      .logo-wrapper {
-        flex-direction: column;
-        align-items: center;
+      nav.active {
+        right: 0;
+      }
+
+      nav a {
+        font-size: 1.2rem;
+        padding: 10px 0;
+        text-align: center;
+        width: auto;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffeb3b;
+      }
+
+      .close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+    }
+
+    @media (max-width:1024px) {
+
+      h1 {
+        font-size: 1.9rem;
+        margin-top: 120px;
+      }
+
+      main p {
+        font-size: 1.3rem;
+        margin-bottom: 100px;
+      }
+
+      nav {
+        gap: 25px;
+      }
+
+    }
+
+    @media (max-width:480px) {
+
+      header {
+        padding: 10px 12px;
+      }
+
+      .container {
+        padding: 30px;
+        max-width: 420px;
+        width: 92%;
+        margin: 40px auto;
+        border-radius: 12px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .logo-wrapper img {
+        max-height: 50px;
       }
 
       .texts {
-        text-align: center;
+        font-size: 0.6rem;
       }
+
+      .menu-toggle {
+        font-size: 1.7rem;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        margin-top: 90px;
+      }
+
+      main p {
+        font-size: 1rem;
+        margin-bottom: 60px;
+      }
+
+      nav {
+        width: 220px;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .buttons button {
+        width: 34px;
+        height: 34px;
+        font-size: 1.6rem;
+      }
+
+      .scroll-down-indicator svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      footer {
+        font-size: 0.9rem;
+      }
+
+    }
+
+    @media screen and (max-width:768px) {
+
+      nav {
+        position: fixed !important;
+        top: 0;
+        right: -280px;
+        width: 260px;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+        justify-content: flex-start;
+
+        padding-top: 20px;
+        gap: 25px;
+
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(6px);
+        transition: right 0.4s ease;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 12px 20px;
+        text-align: center;
+        width: auto;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+      }
+
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffeb3b;
+      }
+
+      .close-btn {
+        display: block !important;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+        z-index: 3001;
+        padding: 5px;
+      }
+
+      .menu-toggle {
+        display: block !important;
+        margin-left: auto;
+        z-index: 3100;
+      }
+
+    }
+
+    @media screen and (max-width:480px) {
+
+      nav {
+        width: 220px !important;
+        right: -220px;
+        padding-top: 20px;
+      }
+
+      nav.active {
+        right: 0 !important;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+        width: 85%;
+      }
+
+      .close-btn {
+        top: 12px;
+        right: 12px;
+        font-size: 1.3rem;
+      }
+
+    }
+
+    @media screen and (max-width:480px) {
+
+      .container {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+        margin-top: 0;
+      }
+
+      main p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+      }
+
+
+      .buttons button {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
+
+    }
+
+    @media (max-width:992px) {
+
+      #navMenu {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding-top: 60px !important;
+      }
+
+      #navMenu a {
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 12px 0 !important;
+      }
+
+    }
+
+    .overlay {
+      pointer-events: none;
+    }
+
+
+    @media (max-width:768px) { 
+      .container {
+        width: 92% !important;
+        max-width: 420px !important;
+        margin: 20px auto !important;
+        padding: 22px !important;
+        height: auto !important;
+      }
+ 
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100% !important;
+        box-sizing: border-box;
+      } 
+      button {
+        width: 100% !important;
+      } 
+      .page-content {
+        padding: 15px !important;
+      }
+
+    } 
+
+    @media (max-width:480px) {
+
+      .container {
+        width: 95% !important;
+        padding: 18px !important;
+      }
+
+      h1 {
+        font-size: 20px !important;
+      }
+
     }
   </style>
 </head>
@@ -341,7 +702,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+      <div class="close-btn" onclick="toggleMenu()">✖</div>
       <a href="index.php">Home</a>
       <a href="register.php">Registration</a>
       <a href="login.php">Login</a>
@@ -432,7 +796,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       &copy;2026
     </footer>
   </section>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      const toggle = document.querySelector(".menu-toggle");
 
+      nav.classList.toggle("active");
+      toggle.classList.toggle("hide");
+    }
+
+    document.querySelectorAll("#navMenu a").forEach(link => {
+      link.addEventListener("click", function () {
+
+        const nav = document.getElementById("navMenu");
+        const toggle = document.querySelector(".menu-toggle");
+
+        nav.classList.remove("active");
+        toggle.classList.remove("hide");
+
+      });
+    });
+  </script>
 </body>
 
 </html>

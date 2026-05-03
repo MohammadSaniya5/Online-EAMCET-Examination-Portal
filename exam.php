@@ -450,6 +450,131 @@ $unansweredCount = count($questions) - $answeredCount;
             background: green;
             color: white;
         }
+ 
+
+        @media (max-width:900px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .subject-links {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .subject-links a {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+
+        }
+ 
+
+        @media (max-width:600px) {
+
+            .header-title {
+                font-size: 18px;
+            }
+
+            .timer {
+                font-size: 14px;
+                right: 10px;
+            }
+
+            .student-info {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .question {
+                padding: 15px;
+            }
+
+            .options label {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .options img {
+                width: 100%;
+            }
+
+            .question-actions {
+                flex-direction: column;
+            }
+
+            .question-actions button {
+                width: 100%;
+            }
+
+            .bubble {
+                width: 32px;
+                height: 32px;
+                font-size: 13px;
+            }
+
+        } 
+
+        @media (max-width:380px) {
+
+            .header-title {
+                font-size: 16px;
+            }
+
+            .timer {
+                font-size: 12px;
+            }
+
+            .bubble {
+                width: 28px;
+                height: 28px;
+                font-size: 11px;
+            }
+
+        }
+ 
+        @media (max-width:600px) {
+ 
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timer {
+                position: static;
+                transform: none;
+                margin-top: 8px;
+            } 
+            .status-box {
+                text-align: center;
+                width: fit-content;
+            }
+ 
+            .question-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .question-actions button {
+                width: 100%;
+                margin: 0;
+            }
+
+        }
     </style>
 </head>
 

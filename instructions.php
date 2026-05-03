@@ -117,6 +117,81 @@ if (!isset($_SESSION['student_id'])) {
         .modal:hover {
             cursor: pointer;
         }
+
+        @media (max-width:768px) {
+
+            .container {
+                padding: 25px;
+                margin: 40px auto;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            ol {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 160px;
+                font-size: 16px;
+            }
+
+        } 
+
+        @media (max-width:480px) {
+
+            .container {
+                width: 92%;
+                padding: 20px;
+                margin: 30px auto;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            ol {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .modal-content {
+                margin: 40% auto;
+                padding: 20px;
+            }
+
+            .modal-buttons button {
+                width: 100%;
+                margin: 8px 0;
+            }
+
+        }
+
+        @media (max-width:480px) {
+
+            .modal-content {
+                width: 92%;
+                padding: 20px;
+                margin: 30vh auto;
+            }
+
+            .modal-buttons {
+                flex-direction: column;
+            }
+
+            .modal-buttons button {
+                width: 100%;
+                font-size: 15px;
+            }
+
+        }
     </style>
 </head>
 
@@ -158,7 +233,7 @@ if (!isset($_SESSION['student_id'])) {
             document.getElementById("confirmModal").style.display = "none";
         }
 
-        function startExam() { 
+        function startExam() {
             window.location.href = "time.php";
         }
 

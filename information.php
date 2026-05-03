@@ -94,6 +94,15 @@ if (!isset($_SESSION['student_id'])) {
         }
 
         @media (max-width: 768px) {
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background-image: url('p1.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+            }
+
             .container {
                 padding: 20px;
             }

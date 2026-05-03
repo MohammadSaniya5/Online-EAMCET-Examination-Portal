@@ -79,6 +79,54 @@ $stmt->execute([$exam_date, $exam_time, $session, $student_id]);
         height: 150px;
       }
     }
+
+    @media (max-width:768px) {
+
+      .timer-container {
+        width: 180px;
+      }
+
+      .timer-text {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.1em;
+      }
+
+    }
+ 
+    @media (max-width:480px) {
+
+      .timer-container {
+        width: 150px;
+      }
+
+      .timer-text {
+        font-size: 1.7em;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+    } 
+
+    @media (max-width:360px) {
+
+      .timer-container {
+        width: 130px;
+      }
+
+      .timer-text {
+        font-size: 1.5em;
+      }
+
+    }
   </style>
 </head>
 

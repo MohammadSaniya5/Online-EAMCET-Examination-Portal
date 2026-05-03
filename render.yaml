@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: eamcet-portal
+    env: docker
+    plan: free
+    dockerFilePath: ./Dockerfile
